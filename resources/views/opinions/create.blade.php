@@ -7,7 +7,7 @@
     <section class="page-hero">
       <p class="eyebrow">Crear</p>
       <h1>Registrar una opinion o reporte de ruta.</h1>
-      <p>Este formulario guarda la informacion en la tabla `opinions` de MySQL.</p>
+      <p>Completa el formulario para registrar tu reporte o sugerencia sobre una ruta.</p>
     </section>
 
     <section class="section">

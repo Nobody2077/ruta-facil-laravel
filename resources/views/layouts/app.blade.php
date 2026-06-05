@@ -18,15 +18,35 @@
       <a href="{{ route('home') }}#rutas">Rutas</a>
       <a href="{{ route('home') }}#comunidad">Comunidad</a>
       <a href="{{ route('opinions.index') }}">Opiniones</a>
-      <a class="nav-action" href="{{ route('opinions.create') }}">Opinar</a>
+
+      @guest
+        <a href="{{ route('login') }}">Ingresar</a>
+        <a class="nav-action" href="{{ route('register') }}">Registrarse</a>
+      @else
+        @php $navRole = auth()->user()->roles->first(); @endphp
+        <span class="nav-user-info">
+          {{ auth()->user()->name }}
+          @if ($navRole)
+            <span class="role-badge role-{{ $navRole->slug }}">{{ $navRole->slug }}</span>
+          @endif
+        </span>
+        <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
+          @csrf
+          <button type="submit" class="nav-action nav-logout">Salir</button>
+        </form>
+      @endguest
     </nav>
   </header>
 
   @yield('content')
 
   <footer class="site-footer">
-    <p>Ruta Facil - Proyecto de movilidad urbana inteligente para El Alto, Bolivia.</p>
-    <a href="{{ route('opinions.create') }}">Registrarme como usuario piloto</a>
+    <p>Ruta Facil &mdash; Movilidad urbana inteligente para El Alto, Bolivia.</p>
+    @auth
+      <a href="{{ route('opinions.create') }}">Dejar una opinion</a>
+    @else
+      <a href="{{ route('login') }}">Iniciar sesion</a>
+    @endauth
   </footer>
 </body>
 </html>

@@ -1,6 +1,19 @@
 @csrf
 
 <label>
+  Proyecto relacionado
+  <select name="project_id">
+    <option value="">Sin proyecto vinculado</option>
+    @foreach ($projects ?? [] as $project)
+      <option value="{{ $project->id }}" @selected((int) old('project_id', $opinion->project_id ?? 0) === $project->id)>
+        {{ $project->title }} @if ($project->category) - {{ $project->category->name }} @endif
+      </option>
+    @endforeach
+  </select>
+  @error('project_id') <span class="error-text">{{ $message }}</span> @enderror
+</label>
+
+<label>
   Nombre
   <input type="text" name="name" value="{{ old('name', $opinion->name ?? '') }}" placeholder="Tu nombre" required>
   @error('name') <span class="error-text">{{ $message }}</span> @enderror
@@ -18,12 +31,16 @@
   @error('message') <span class="error-text">{{ $message }}</span> @enderror
 </label>
 
+@if (isset($opinion) && $opinion->exists)
 <label>
   Estado
   <select name="status" required>
     @foreach (['nuevo' => 'Nuevo', 'revisado' => 'Revisado', 'archivado' => 'Archivado'] as $value => $label)
-      <option value="{{ $value }}" @selected(old('status', $opinion->status ?? 'nuevo') === $value)>{{ $label }}</option>
+      <option value="{{ $value }}" @selected(old('status', $opinion->status) === $value)>{{ $label }}</option>
     @endforeach
   </select>
   @error('status') <span class="error-text">{{ $message }}</span> @enderror
 </label>
+@else
+<input type="hidden" name="status" value="nuevo">
+@endif

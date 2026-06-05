@@ -100,13 +100,105 @@
       </div>
     </section>
 
+    {{-- Panel de usuario: visible solo cuando hay sesion activa --}}
+    @auth
+    @php
+      $authUser = auth()->user();
+      $authRole = $authUser->roles->first();
+      $rolSlug  = $authRole?->slug ?? 'usuario';
+    @endphp
+    <section class="section user-panel-section" id="mi-panel" aria-label="Panel de usuario">
+      <div class="section-heading">
+        <p class="eyebrow">Mi panel</p>
+        <h2>Bienvenido, {{ $authUser->name }}.</h2>
+        <p>
+          Sesion activa como
+          <span class="role-badge role-{{ $rolSlug }}" style="font-size: 0.85rem; vertical-align: middle;">
+            {{ $rolSlug }}
+          </span>
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        @if ($rolSlug === 'admin')
+          <article class="feature-card">
+            <span class="feature-icon feature-icon-admin">RPT</span>
+            <h3>Reporte del sistema</h3>
+            <p>Resumen automatizado de opiniones, proyectos y actividad ciudadana.</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="{{ route('reportes.resumen') }}">Ver reporte</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">OPN</span>
+            <h3>Gestionar opiniones</h3>
+            <p>Revisa, edita y elimina cualquier opinion registrada por la ciudadania.</p>
+            <div class="card-actions">
+              <a class="button" href="{{ route('opinions.index') }}">Ver CRUD</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" style="background: #fff3cd; color: #7a5800;">NEW</span>
+            <h3>Nueva opinion</h3>
+            <p>Registra una nueva opinion ciudadana como administrador.</p>
+            <div class="card-actions">
+              <a class="button" href="{{ route('opinions.create') }}">Crear</a>
+            </div>
+          </article>
+        @elseif ($rolSlug === 'moderador')
+          <article class="feature-card">
+            <span class="feature-icon feature-icon-mod">RPT</span>
+            <h3>Reporte del sistema</h3>
+            <p>Resumen de opiniones, proyectos y actividad. Los moderadores tambien pueden consultarlo.</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="{{ route('reportes.resumen') }}">Ver reporte</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon feature-icon-mod">MOD</span>
+            <h3>Moderar opiniones</h3>
+            <p>Revisa y edita las opiniones ciudadanas pendientes. No puedes eliminarlas.</p>
+            <div class="card-actions">
+              <a class="button" href="{{ route('opinions.index') }}">Ver opiniones</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">NEW</span>
+            <h3>Agregar opinion</h3>
+            <p>Registra una nueva opinion en nombre de la comunidad.</p>
+            <div class="card-actions">
+              <a class="button" href="{{ route('opinions.create') }}">Crear opinion</a>
+            </div>
+          </article>
+        @else
+          <article class="feature-card">
+            <span class="feature-icon">OPN</span>
+            <h3>Opiniones ciudadanas</h3>
+            <p>Consulta las opiniones registradas sobre las rutas de transporte.</p>
+            <div class="card-actions">
+              <a class="button" href="{{ route('opinions.index') }}">Ver todas</a>
+            </div>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" style="background: #dff1e9; color: var(--green-dark);">NEW</span>
+            <h3>Dejar mi opinion</h3>
+            <p>Comparte tu experiencia sobre una ruta y ayuda a mejorar la informacion.</p>
+            <div class="card-actions">
+              <a class="button button-primary" href="{{ route('opinions.create') }}">Crear opinion</a>
+            </div>
+          </article>
+        @endif
+      </div>
+    </section>
+    @endauth
+
     <section class="section feedback-section" id="opinar">
       <div class="feedback-copy">
-        <p class="eyebrow">CRUD de opiniones</p>
-        <h2>Comentarios conectados a MySQL y phpMyAdmin.</h2>
+        <p class="eyebrow">Opiniones ciudadanas</p>
+        <h2>Tu reporte ayuda a mejorar las rutas de El Alto.</h2>
         <p>
-          A diferencia de la version estatica, ahora cada opinion se registra en la base de datos
-          `ruta_facil` mediante Laravel, controlador, modelo, migracion y vistas Blade.
+          Cada opinion se guarda y queda disponible para que la comunidad y los moderadores
+          puedan revisarla, clasificarla y usarla para mejorar la informacion de transporte.
         </p>
       </div>
       <div class="feedback-form">
@@ -137,8 +229,20 @@
       <div class="download-card">
         <span class="android-badge">Android</span>
         <h3>Ruta Facil App</h3>
-        <p>Version inicial en desarrollo. Puedes registrar interes y dejar sugerencias desde esta pagina.</p>
-        <a class="button button-primary" href="{{ route('opinions.create') }}">Quiero participar</a>
+        <p>
+          Registrate para participar con tu opinion, o revisa el codigo fuente
+          de la app movil directamente en GitHub.
+        </p>
+        <div class="card-actions" style="margin-top: 1rem;">
+          @guest
+            <a class="button button-primary" href="{{ route('register') }}">Quiero participar</a>
+          @else
+            <a class="button button-primary" href="{{ route('opinions.create') }}">Dejar mi opinion</a>
+          @endguest
+          <a class="button" href="https://github.com/Nobody2077/mi_app" target="_blank" rel="noopener noreferrer">
+            Ver app en GitHub
+          </a>
+        </div>
       </div>
     </section>
   </main>

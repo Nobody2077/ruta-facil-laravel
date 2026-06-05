@@ -20,17 +20,28 @@
         @forelse ($opinions as $opinion)
           <article class="publication-card">
             <span class="tag">{{ ucfirst($opinion->status) }}</span>
+            @if ($opinion->project?->category)
+              <span class="tag">{{ $opinion->project->category->name }}</span>
+            @endif
             <h3>{{ $opinion->name }}</h3>
-            <p class="publication-meta">{{ $opinion->route }} - {{ $opinion->created_at->format('d/m/Y') }}</p>
+            <p class="publication-meta">
+              {{ $opinion->project?->title ?? $opinion->route }} - {{ $opinion->created_at->format('d/m/Y') }}
+            </p>
             <p>{{ \Illuminate\Support\Str::limit($opinion->message, 140) }}</p>
             <div class="card-actions">
               <a class="button" href="{{ route('opinions.show', $opinion) }}">Ver</a>
-              <a class="button" href="{{ route('opinions.edit', $opinion) }}">Editar</a>
-              <form method="POST" action="{{ route('opinions.destroy', $opinion) }}">
-                @csrf
-                @method('DELETE')
-                <button class="button button-danger" type="submit">Eliminar</button>
-              </form>
+              @auth
+                @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('moderador'))
+                  <a class="button" href="{{ route('opinions.edit', $opinion) }}">Editar</a>
+                @endif
+                @if (auth()->user()->hasRole('admin'))
+                  <form method="POST" action="{{ route('opinions.destroy', $opinion) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="button button-danger" type="submit" onclick="return confirm('¿Eliminar esta opinion? Esta accion no se puede deshacer.')">Eliminar</button>
+                  </form>
+                @endif
+              @endauth
             </div>
           </article>
         @empty
