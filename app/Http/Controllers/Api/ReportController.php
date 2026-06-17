@@ -14,4 +14,9 @@ class ReportController extends Controller
     {
         return response()->json(['data' => $this->service->summary()]);
     }
+
+    public function recorridos(): JsonResponse
+    {
+        return response()->json(['data' => $this->service->recorridos()]);
+    }
 }
