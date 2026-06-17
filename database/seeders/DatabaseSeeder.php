@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
         ]);
 
+        // El seeder de recorridos se ejecuta al final (depende de categorias y del admin).
+
         $roles = Role::all()->keyBy('slug');
         $categories = Category::all();
 
@@ -147,5 +149,8 @@ class DatabaseSeeder extends Seeder
                 ],
             );
         });
+
+        // Recorridos (cabecera) con sus paradas (detalle) — requiere categorias y admin ya creados.
+        $this->call(RecorridoSeeder::class);
     }
 }

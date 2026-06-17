@@ -23,4 +23,9 @@ class Category extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    public function recorridos(): HasMany
+    {
+        return $this->hasMany(Recorrido::class);
+    }
 }

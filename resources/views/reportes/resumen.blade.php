@@ -8,7 +8,11 @@
     <p class="eyebrow">Panel de administracion</p>
     <h2>Reporte del sistema</h2>
     <p>Resumen automatizado de opiniones, proyectos y actividad ciudadana en tiempo real.</p>
-    <a href="{{ route('home') }}" style="color: var(--green); font-weight: 800;">&larr; Volver al inicio</a>
+    <div class="card-actions">
+      <a class="button button-primary" href="{{ route('reportes.resumen.pdf') }}">Descargar PDF</a>
+      <a class="button" href="{{ route('reportes.recorridos') }}">Reporte de recorridos</a>
+      <a class="button" href="{{ route('home') }}">Volver al inicio</a>
+    </div>
   </div>
 
   <div class="section" style="padding-top: 0;">
