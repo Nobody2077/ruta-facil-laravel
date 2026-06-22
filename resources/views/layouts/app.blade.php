@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title', 'Ruta Facil')</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  {{-- CSS heredado: estilos de las vistas aun no migradas a Tailwind (opiniones, auth, reportes) --}}
-  <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/components.css') }}">
 </head>
 <body class="font-sans antialiased">
   <header class="fixed inset-x-0 top-0 z-30 flex flex-col gap-3 bg-[rgba(11,19,24,0.92)] px-4 py-4 text-white backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-12">

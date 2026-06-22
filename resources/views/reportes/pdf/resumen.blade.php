@@ -5,16 +5,16 @@
   <style>
     * { font-family: DejaVu Sans, sans-serif; }
     body { color: #18222a; font-size: 12px; margin: 0; }
-    .header { border-bottom: 3px solid #0e8f68; padding-bottom: 10px; margin-bottom: 18px; }
-    .brand { color: #0e8f68; font-size: 20px; font-weight: bold; }
+    .header { border-bottom: 3px solid #d6275e; padding-bottom: 10px; margin-bottom: 18px; }
+    .brand { color: #d6275e; font-size: 20px; font-weight: bold; }
     .title { font-size: 16px; margin: 4px 0 0; }
     .muted { color: #5d6b75; font-size: 10px; }
     .totals { width: 100%; margin-bottom: 18px; }
     .totals td { width: 50%; padding: 6px; }
     .total-box { border: 1px solid #dfe5e5; border-radius: 6px; padding: 12px; text-align: center; }
-    .total-num { font-size: 30px; font-weight: bold; color: #0e8f68; }
+    .total-num { font-size: 30px; font-weight: bold; color: #d6275e; }
     .total-label { color: #5d6b75; font-size: 11px; }
-    h2 { font-size: 13px; color: #076348; border-bottom: 1px solid #dfe5e5; padding-bottom: 4px; margin: 18px 0 8px; }
+    h2 { font-size: 13px; color: #b01b4c; border-bottom: 1px solid #dfe5e5; padding-bottom: 4px; margin: 18px 0 8px; }
     table.data { width: 100%; border-collapse: collapse; }
     table.data th { background: #eef5f0; text-align: left; padding: 6px 8px; font-size: 11px; border-bottom: 1px solid #dfe5e5; }
     table.data td { padding: 6px 8px; border-bottom: 1px solid #eef0f0; }

@@ -7,7 +7,7 @@
     bottom: 0.35rem;
     width: 3px;
     border-radius: 999px;
-    background: linear-gradient(180deg, #0e8f68 0%, #f1b82d 38%, #c44832 70%, #0b7285 100%);
+    background: linear-gradient(180deg, #d6275e 0%, #f4b41a 38%, #ef6f3c 70%, #0e9c9c 100%);
     transform-origin: top;
     transform: scaleY(0);
     animation: rf-subir 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -31,13 +31,13 @@
     margin-left: -0.78rem;
     border-radius: 999px;
     background: var(--c);
-    box-shadow: 0 0 0 4px #18222a;
+    box-shadow: 0 0 0 4px #1b1320;
   }
   .rf-dot--activa {
     width: 1.15rem;
     height: 1.15rem;
     margin-left: -0.95rem;
-    box-shadow: 0 0 0 4px #18222a, 0 0 0 7px color-mix(in srgb, var(--c) 45%, transparent);
+    box-shadow: 0 0 0 4px #1b1320, 0 0 0 7px color-mix(in srgb, var(--c) 45%, transparent);
   }
   .rf-rotulo {
     grid-area: rotulo;
@@ -54,7 +54,7 @@
     color: rgba(255, 255, 255, 0.5);
   }
   .rf-estacion--activa .rf-rotulo { color: #fff; }
-  .rf-estacion--activa .rf-sub { color: var(--yellow, #f1b82d); }
+  .rf-estacion--activa .rf-sub { color: var(--yellow, #f4b41a); }
 
   @keyframes rf-subir { to { transform: scaleY(1); } }
   @keyframes rf-aparece { to { opacity: 1; transform: translateX(0); } }

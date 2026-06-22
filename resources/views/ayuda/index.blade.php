@@ -5,7 +5,7 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(960px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Centro de ayuda</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Centro de ayuda</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">Preguntas frecuentes</h1>
       <p class="text-muted">Encuentra cómo usar Ruta Facil según tu rol. ¿No ves tu duda? Deja una opinión y te responderemos.</p>
     </section>
@@ -21,10 +21,10 @@
         </x-faq>
         <x-faq question="¿Necesito una cuenta para usarla?">
           No para consultar: las opiniones y los recorridos son de lectura pública. Para participar
-          (dejar opiniones o recibir notificaciones) debes <a class="font-bold text-green" href="{{ route('register') }}">registrarte</a>.
+          (dejar opiniones o recibir notificaciones) debes <a class="font-bold text-teal" href="{{ route('register') }}">registrarte</a>.
         </x-faq>
         <x-faq question="¿Cómo creo una cuenta?">
-          Entra a <a class="font-bold text-green" href="{{ route('register') }}">Registrarse</a>, completa tu nombre,
+          Entra a <a class="font-bold text-teal" href="{{ route('register') }}">Registrarse</a>, completa tu nombre,
           correo y contraseña. Tu cuenta se crea con el rol <strong>usuario</strong> por defecto.
         </x-faq>
       </div>
@@ -33,11 +33,11 @@
       <div class="grid gap-3">
         <h2 class="text-xl font-extrabold text-green-dark">Para usuarios</h2>
         <x-faq question="¿Cómo dejo una opinión sobre una ruta?">
-          Inicia sesión y ve a <a class="font-bold text-green" href="{{ route('opinions.create') }}">Crear opinión</a>.
+          Inicia sesión y ve a <a class="font-bold text-teal" href="{{ route('opinions.create') }}">Crear opinión</a>.
           Indica la zona o ruta, tu nombre y tu reporte. Quedará registrada para que la comunidad y los moderadores la revisen.
         </x-faq>
         <x-faq question="¿Dónde veo los recorridos y sus paradas?">
-          En la sección <a class="font-bold text-green" href="{{ route('recorridos.index') }}">Recorridos</a>.
+          En la sección <a class="font-bold text-teal" href="{{ route('recorridos.index') }}">Recorridos</a>.
           Cada recorrido muestra su origen, destino y la lista ordenada de paradas.
         </x-faq>
         <x-faq question="¿Qué son las notificaciones (campana 🔔)?">
@@ -54,7 +54,7 @@
           y consultar los reportes del sistema. No puedes eliminar registros (eso es exclusivo del administrador).
         </x-faq>
         <x-faq question="¿Cómo consulto los reportes?">
-          Desde tu panel en el inicio o en <a class="font-bold text-green" href="{{ route('reportes.resumen') }}">Reporte del sistema</a>.
+          Desde tu panel en el inicio o en <a class="font-bold text-teal" href="{{ route('reportes.resumen') }}">Reporte del sistema</a>.
           Incluye el resumen general y el reporte de recorridos, ambos exportables a PDF.
         </x-faq>
       </div>
@@ -64,7 +64,7 @@
         <h2 class="text-xl font-extrabold text-green-dark">Para administradores</h2>
         <x-faq question="¿Qué control adicional tengo como administrador?">
           Acceso total: crear, editar y <strong>eliminar</strong> opiniones y recorridos, ver todos los reportes
-          y acceder a los <a class="font-bold text-green" href="{{ route('seguridad.logs') }}">logs de seguridad</a>.
+          y acceder a los <a class="font-bold text-teal" href="{{ route('seguridad.logs') }}">logs de seguridad</a>.
         </x-faq>
         <x-faq question="¿Qué registran los logs de seguridad?">
           Inicios de sesión, intentos fallidos, cierres de sesión y accesos denegados por falta de permisos,

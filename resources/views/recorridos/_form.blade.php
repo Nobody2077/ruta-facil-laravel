@@ -1,7 +1,7 @@
 @csrf
 
 @php
-    $inputClass = 'w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/30';
+    $inputClass = 'w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-ink focus:border-magenta focus:outline-none focus:ring-2 focus:ring-magenta/30';
     $labelClass = 'grid gap-1.5 font-extrabold text-ink';
 
     $paradasData = old('paradas');
@@ -73,7 +73,7 @@
 
         <label class="flex items-center gap-2 self-end font-extrabold text-ink">
             <input type="hidden" name="activo" value="0">
-            <input type="checkbox" name="activo" value="1" class="h-5 w-5 rounded border-line text-green focus:ring-green/30" @checked(old('activo', $recorrido->activo ?? true))>
+            <input type="checkbox" name="activo" value="1" class="h-5 w-5 rounded border-line text-magenta focus:ring-magenta/30" @checked(old('activo', $recorrido->activo ?? true))>
             Recorrido activo
         </label>
     </div>

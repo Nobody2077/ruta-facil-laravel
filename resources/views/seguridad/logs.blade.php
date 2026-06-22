@@ -14,14 +14,14 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(1160px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Panel de administración</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Panel de administración</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">Logs de seguridad</h1>
       <p class="mb-5 text-muted">Auditoría de inicios de sesión, intentos fallidos, cierres de sesión y accesos denegados por rol.</p>
 
       <form method="GET" action="{{ route('seguridad.logs') }}" class="flex flex-wrap items-end gap-3">
         <label class="grid gap-1 text-xs font-extrabold uppercase text-muted">
           Filtrar por evento
-          <select name="event" class="w-56 rounded-md border border-line bg-white px-3.5 py-2.5 text-ink focus:border-green focus:outline-none focus:ring-2 focus:ring-green/30">
+          <select name="event" class="w-56 rounded-md border border-line bg-white px-3.5 py-2.5 text-ink focus:border-magenta focus:outline-none focus:ring-2 focus:ring-magenta/30">
             <option value="">Todos los eventos</option>
             @foreach ($events as $ev)
               <option value="{{ $ev }}" @selected($event === $ev)>{{ $eventStyles[$ev][1] ?? $ev }}</option>

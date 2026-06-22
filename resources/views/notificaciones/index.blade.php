@@ -5,7 +5,7 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(960px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Alarmas del sistema</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Alarmas del sistema</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">Centro de notificaciones</h1>
       <p class="text-muted">Avisos internos del sistema, como nuevas opiniones ciudadanas registradas.</p>
     </section>

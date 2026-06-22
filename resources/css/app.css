@@ -9,19 +9,24 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* Paleta Ruta Facil (migrada desde public/css/styles.css) */
-    --color-ink: #18222a;
-    --color-muted: #5d6b75;
-    --color-paper: #fbfaf6;
-    --color-surface: #ffffff;
-    --color-line: #dfe5e5;
-    --color-green: #0e8f68;
-    --color-green-dark: #076348;
-    --color-yellow: #f1b82d;
-    --color-red: #c44832;
-    --color-teal: #0b7285;
+    /* Paleta Ruta Facil — Neo-Andino / Aguayo */
+    --color-ink: #1b1320;          /* morado-tinta calido (fondos oscuros, texto) */
+    --color-muted: #6a5f6b;        /* gris calido con tinte violeta */
+    --color-paper: #fbf6ef;        /* blanco calido (fondo) */
+    --color-surface: #fffdfa;      /* superficie de tarjetas */
+    --color-line: #e8ded6;         /* bordes calidos */
 
-    --shadow-rf: 0 18px 45px rgba(24, 34, 42, 0.13);
+    --color-magenta: #d6275e;      /* PRIMARIO — magenta de aguayo (CTA, marca) */
+    --color-magenta-dark: #b01b4c;
+    --color-teal: #0e9c9c;         /* secundario — teal cholet (links, datos) */
+    --color-teal-dark: #0c7e7e;
+    --color-yellow: #f4b41a;       /* acento — marigold (eyebrows, highlights) */
+    --color-green: #1f9d6b;        /* acento — verde andino (exito) */
+    --color-green-dark: #16774f;
+    --color-naranja: #ef6f3c;      /* acento — naranja (alertas suaves) */
+    --color-red: #d6433a;          /* peligro (acciones destructivas) */
+
+    --shadow-rf: 0 18px 45px rgba(27, 19, 32, 0.16);
 }
 
 /* Estilos base de la app (solo afectan a las vistas migradas a Tailwind) */

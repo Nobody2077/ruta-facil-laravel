@@ -5,7 +5,7 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(1160px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Panel de administración</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Panel de administración</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">Reporte de recorridos y paradas</h1>
       <p class="mb-5 text-muted">Reporte cabecera-detalle: cada recorrido con sus paradas. Generado el {{ $data['generado_en'] }}.</p>
       <div class="flex flex-wrap gap-2.5">
@@ -25,7 +25,7 @@
           ['Paradas/recorrido', $data['promedio_paradas']],
         ] as [$label, $value])
           <x-card class="text-center">
-            <span class="block text-4xl font-black text-green">{{ $value }}</span>
+            <span class="block text-4xl font-black text-teal">{{ $value }}</span>
             <span class="text-sm font-bold text-muted">{{ $label }}</span>
           </x-card>
         @endforeach

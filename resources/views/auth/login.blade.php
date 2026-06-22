@@ -22,22 +22,22 @@
         <span class="rf-cable" aria-hidden="true"></span>
 
         <li class="rf-estacion" style="--i:0">
-          <span class="rf-dot" style="--c:#0e8f68"></span>
+          <span class="rf-dot" style="--c:#d6275e"></span>
           <span class="rf-rotulo">Rutas en vivo</span>
           <span class="rf-sub">Minibus, trufi y teleferico</span>
         </li>
         <li class="rf-estacion" style="--i:1">
-          <span class="rf-dot" style="--c:#f1b82d"></span>
+          <span class="rf-dot" style="--c:#f4b41a"></span>
           <span class="rf-rotulo">Opiniones</span>
           <span class="rf-sub">La voz del barrio</span>
         </li>
         <li class="rf-estacion" style="--i:2">
-          <span class="rf-dot" style="--c:#c44832"></span>
+          <span class="rf-dot" style="--c:#ef6f3c"></span>
           <span class="rf-rotulo">Recorridos</span>
           <span class="rf-sub">Paradas y horarios</span>
         </li>
         <li class="rf-estacion rf-estacion--activa" style="--i:3">
-          <span class="rf-dot rf-dot--activa" style="--c:#0b7285"></span>
+          <span class="rf-dot rf-dot--activa" style="--c:#0e9c9c"></span>
           <span class="rf-rotulo">Tu cuenta</span>
           <span class="rf-sub">Estas aqui</span>
         </li>
@@ -51,7 +51,7 @@
     {{-- DESTINO: el formulario --}}
     <section class="flex flex-col justify-center gap-6 px-7 py-9 sm:px-10">
       <header class="grid gap-1.5">
-        <p class="m-0 text-xs font-bold uppercase tracking-[0.2em] text-green">Acceso</p>
+        <p class="m-0 text-xs font-bold uppercase tracking-[0.2em] text-magenta">Acceso</p>
         <h1 class="m-0 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">Bienvenido de vuelta</h1>
         <p class="m-0 text-muted">Entra a tu cuenta para opinar y seguir tus rutas en Ruta Facil.</p>
       </header>

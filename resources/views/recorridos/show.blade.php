@@ -5,7 +5,7 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(960px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Detalle</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Detalle</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">{{ $recorrido->nombre }}</h1>
       <p class="text-sm font-bold text-teal">{{ $recorrido->origen }} → {{ $recorrido->destino }}</p>
     </section>

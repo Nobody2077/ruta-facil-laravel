@@ -5,7 +5,7 @@
 @section('content')
   <main class="pt-28 text-ink">
     <section class="mx-auto w-[min(1160px,calc(100%-2rem))] py-8">
-      <p class="mb-2 text-xs font-extrabold uppercase text-green">Cabecera - detalle</p>
+      <p class="mb-2 text-xs font-extrabold uppercase text-magenta">Cabecera - detalle</p>
       <h1 class="mb-2 text-3xl font-extrabold sm:text-4xl">Recorridos de transporte y sus paradas.</h1>
       <p class="mb-5 text-muted">Cada recorrido (cabecera) agrupa varias paradas (detalle). Lista, crea, revisa, edita y elimina.</p>
       @auth
